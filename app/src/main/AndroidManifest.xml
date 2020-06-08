@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".schedule.AddScheduleActivity"></activity>
+        <activity android:name=".schedule.ShowScheduleActivity" />
+        <activity android:name=".contacts.SelGroupActivity" />
+        <activity android:name=".contacts.EditContactsActivity" />
+        <activity android:name=".contacts.ContactsInfoActivity" />
+        <activity android:name=".group.AddGroupActivity" />
+        <activity android:name=".group.ShowGroupActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
