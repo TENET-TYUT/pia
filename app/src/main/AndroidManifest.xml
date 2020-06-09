@@ -9,14 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.tenet.pia.schedule.AddScheduleActivity"></activity>
-        <activity android:name="com.tenet.pia.schedule.ShowScheduleActivity" />
-        <activity android:name="com.tenet.pia.contacts.SelGroupActivity" />
-        <activity android:name="com.tenet.pia.contacts.EditContactsActivity" />
-        <activity android:name="com.tenet.pia.contacts.ContactsInfoActivity" />
-        <activity android:name="com.tenet.pia.group.AddGroupActivity" />
-        <activity android:name="com.tenet.pia.group.ShowGroupActivity" />
-        <activity android:name="com.tenet.pia.MainActivity">
+        <activity android:name=".notes.EditNotesActivity"></activity>
+        <activity android:name=".notes.AddNotesActivity" />
+        <activity android:name=".notes.ShowNotesActivity" />
+        <activity android:name=".schedule.EditScheduleActivity" />
+        <activity android:name=".group.GroupContactsActivity" />
+        <activity android:name=".group.GroupMainActivity" />
+        <activity android:name=".schedule.AddScheduleActivity" />
+        <activity android:name=".schedule.ShowScheduleActivity" />
+        <activity android:name=".contacts.SelGroupActivity" />
+        <activity android:name=".contacts.EditContactsActivity" />
+        <activity android:name=".contacts.ContactsInfoActivity" />
+        <activity android:name=".group.AddGroupActivity" />
+        <activity android:name=".group.ShowGroupActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
