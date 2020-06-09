@@ -7,5 +7,23 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="headerTextStyle_CN">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">31dp</item>
+    </style>
+    <style name="headerTextStyle_EN" parent="headerTextStyle_CN">
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="listItemTextStyle" parent="headerTextStyle_EN"></style>
+    <style name="myGroupTextStyle" parent="headerTextStyle_CN">
+        <item name="android:textSize">18dp</item>
+    </style>
+    <style name="btnTextStyle" parent="headerTextStyle_CN">
+        <item name="android:textSize">26dp</item>
+    </style>
+    <style name="homeIndexTextStyle" parent="headerTextStyle_CN">
+        <item name="android:textSize">15dp</item>
+    </style>
 </resources>
