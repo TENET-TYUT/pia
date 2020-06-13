@@ -29,10 +29,10 @@ public class DateBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + GROUP_TABLE + " (id long primary key autoincrement, groupName text)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + CONTACT_TABLE + " (id long primary key autoincrement, name text, phone text, email text, gender text,  groupName text, FOREIGN KEY(groupId) REFERENCES " + GROUP_TABLE + " (id))" );
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + NOTE_TABLE + " (id long primary key autoincrement, noteTitle text, noteContent text, long createTime)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + SCHEDULE_TABLE + " (id long primary key autoincrement, startTime long, endTime long, scheduleTitle text, scheduleDes text, scheduleLocation text)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + GROUP_TABLE + " (id INTEGER primary key autoincrement, groupName text)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + CONTACT_TABLE + " (contact_id INTEGER primary key autoincrement, name text, phone text, email text, gender text, groupName text, FOREIGN KEY(groupId) REFERENCES " + GROUP_TABLE +"(id));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + NOTE_TABLE + " (id INTEGER primary key autoincrement, noteTitle text, noteContent text, long createTime)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + SCHEDULE_TABLE + " (id INTEGER primary key autoincrement, startTime long, endTime long, scheduleTitle text, scheduleDes text, scheduleLocation text)");
     }
 
     @Override
