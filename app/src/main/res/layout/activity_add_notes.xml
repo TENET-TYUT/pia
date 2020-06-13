@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,32 +7,62 @@
     tools:context="com.tenet.pia.notes.AddNotesActivity"
     android:orientation="vertical"
     android:background="@drawable/bkg">
-
+    <ImageView
+        android:id="@+id/return_icon"
+        android:layout_width="25.5dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="32.75dp"
+        android:layout_marginLeft="36.75dp"
+        android:background="@drawable/return_icon"/>
+    <TextView
+        style="@style/headerTextStyle_CN"
+        android:text="新建记事本"
+        android:layout_marginTop="28dp"
+        android:layout_marginLeft="36dp"
+        />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/return_icon"
-            android:layout_width="25.5dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="32.75dp"
-            android:layout_marginLeft="36.75dp"
-            android:background="@drawable/return_icon"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="74.75dp"
-        android:layout_marginLeft="29.75dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+        <TextView
+            style="@style/listItemTextStyle"
+            android:text="标题:"
+            android:layout_marginLeft="36dp"
+            />
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="标题"
-            android:textColor="#000000"
-            android:textSize="31dp"/>
-
-
+            android:id="@+id/notes_title"
+            style="@style/listItemTextStyle"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            />
     </LinearLayout>
-
-</RelativeLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="38dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            style="@style/listItemTextStyle"
+            android:text="正文："
+            android:layout_marginLeft="36dp"
+            />
+        <EditText
+            android:id="@+id/notes_content"
+            style="@style/listItemTextStyle"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="10"
+            android:background="@null"
+            />
+    </LinearLayout>
+</LinearLayout>
