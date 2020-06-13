@@ -1,9 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkg"
     tools:context=".schedule.AddScheduleActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/as_return"
+        android:layout_width="33dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/return_icon"
+        android:onClick="click"
+        tools:ignore="OnClick" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="85dp">
+
+        <TextView
+            style="@style/headerTextStyle_CN"
+            android:layout_gravity="center_horizontal"
+            android:text="新建日程"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            style="@style/headerTextStyle_EN"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="NEWDATE"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="214dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/as_txt_business"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  事务："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/as_business"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/as_txt_business"
+                android:background="@null" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/as_txt_date"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  日期："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/as_date"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/as_txt_date"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade"
+            style="@style/listItemTextStyle">
+
+            <TextView
+                android:id="@+id/as_txt_site"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  地点：" />
+
+            <EditText
+                android:id="@+id/as_site"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/as_txt_site"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/as_txt_Btime"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  开始时间："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/as_Btime"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/as_txt_Btime"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/as_txt_Etime"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  结束时间："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/as_Etime"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/as_txt_Etime"
+                android:background="@null"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/as_btn_determine"
+            style="@style/btnTextStyle"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:gravity="center"
+            android:onClick="click"
+            android:text="确定"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+
+</RelativeLayout>
