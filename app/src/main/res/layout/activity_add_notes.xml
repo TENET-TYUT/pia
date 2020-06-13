@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tenet.pia.notes.AddNotesActivity">
+    tools:context="com.tenet.pia.notes.AddNotesActivity"
+    android:orientation="vertical"
+    android:background="@drawable/bkg">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/return_icon"
+            android:layout_width="25.5dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="32.75dp"
+            android:layout_marginLeft="36.75dp"
+            android:background="@drawable/return_icon"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="74.75dp"
+        android:layout_marginLeft="29.75dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="标题"
+            android:textColor="#000000"
+            android:textSize="31dp"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
