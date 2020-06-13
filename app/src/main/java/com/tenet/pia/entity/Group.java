@@ -20,6 +20,10 @@ public class Group {
         this.groupName = groupName;
     }
 
+    public Group(String groupName) {
+        this.groupName = groupName;
+    }
+
     public long getId() {
         return id;
     }

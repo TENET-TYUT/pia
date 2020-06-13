@@ -50,6 +50,15 @@ public class Contact {
         this.groupName = groupName;
     }
 
+    public Contact(String name, String phone, String email, String gender, long groupId, String groupName) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.gender = gender;
+        this.groupId = groupId;
+        this.groupName = groupName;
+    }
+
     public long getId() {
         return id;
     }
