@@ -45,6 +45,16 @@ public class Schedule {
         this.scheduleLocation = scheduleLocation;
     }
 
+
+
+    public Schedule(long startTime, long endTime, String scheduleTitle, String scheduleDes, String scheduleLocation) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.scheduleTitle = scheduleTitle;
+        this.scheduleDes = scheduleDes;
+        this.scheduleLocation = scheduleLocation;
+    }
+
     public long getId() {
         return id;
     }

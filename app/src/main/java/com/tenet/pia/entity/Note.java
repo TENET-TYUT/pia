@@ -29,6 +29,13 @@ public class Note {
         this.createTime = createTime;
     }
 
+
+    public Note(String noteTitle, String noteContent, long createTime) {
+        this.noteTitle = noteTitle;
+        this.noteContent = noteContent;
+        this.createTime = createTime;
+    }
+
     public long getId() {
         return id;
     }
