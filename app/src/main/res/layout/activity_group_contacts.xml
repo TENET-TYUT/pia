@@ -5,5 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.tenet.pia.group.GroupContactsActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bkg"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/return_icon"
+            android:layout_width="25dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/return_icon" />
+        <TextView
+            android:id="@+id/group_name"
+            style="@style/headerTextStyle_CN"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="20dp"
+            android:text="群组名字" />
+        <TextView
+            android:id="@+id/group_contact"
+            style="@style/headerTextStyle_EN"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="10dp"
+            android:text="GROUP CONTACTS"
+            />
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/col" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp">
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="26dp"
+                android:text="· 人名1" />
+
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
