@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkg"
     tools:context=".contacts.SelGroupActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/sg_Cancel"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/cancel"
+            android:onClick="click"
+            tools:ignore="OnClick" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/sg_Confirm"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:onClick="click"
+            android:background="@drawable/confirm"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="85dp">
+
+        <TextView
+            style="@style/headerTextStyle_CN"
+            android:layout_gravity="center_horizontal"
+            android:text="选择群组"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="170dp">
+
+        <TextView
+            style="@style/listItemTextStyle"
+            android:layout_gravity="center_horizontal"
+            android:text="高中同学"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+</RelativeLayout>
