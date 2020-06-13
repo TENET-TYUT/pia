@@ -70,7 +70,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
+            <ImageButton
+                android:id="@+id/btn_contacts"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:background="@drawable/contacts"/>
@@ -88,7 +89,8 @@
             android:orientation="vertical"
             android:gravity="center"
             android:layout_marginLeft="80dp">
-            <ImageView
+            <ImageButton
+                android:id="@+id/btn_schedule"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:background="@drawable/schedule"/>
@@ -106,7 +108,8 @@
             android:orientation="vertical"
             android:gravity="center"
             android:layout_marginLeft="80dp">
-            <ImageView
+            <ImageButton
+                android:id="@+id/btn_notes"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:background="@drawable/notes"/>
