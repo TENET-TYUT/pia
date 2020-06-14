@@ -57,11 +57,14 @@
         android:orientation="vertical"
         android:layout_marginTop="170dp">
 
-        <TextView
-            style="@style/listItemTextStyle"
-            android:layout_gravity="center_horizontal"
-            android:text="高中同学"
-            tools:ignore="MissingConstraints" />
+        <ListView
+            android:id="@+id/Lv_sg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:divider="@null"/>
+
+
 
     </LinearLayout>
 

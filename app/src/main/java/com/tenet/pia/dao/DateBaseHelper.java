@@ -23,7 +23,7 @@ public class DateBaseHelper extends SQLiteOpenHelper {
         return instance;
     }
 
-    private DateBaseHelper(Context context) {
+    public DateBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
