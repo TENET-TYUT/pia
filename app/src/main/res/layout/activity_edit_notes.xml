@@ -7,13 +7,37 @@
     tools:context="com.tenet.pia.notes.AddNotesActivity"
     android:orientation="vertical"
     android:background="@drawable/bkg">
-    <ImageView
-        android:id="@+id/return_icon"
-        android:layout_width="25.5dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="32.75dp"
-        android:layout_marginLeft="36.75dp"
-        android:background="@drawable/return_icon"/>
+
+
+
+    <LinearLayout
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+
+        <ImageButton
+            android:id="@+id/return_icon"
+            android:layout_width="25.5dp"
+            android:layout_height="15dp"
+            android:background="@drawable/return_icon"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/ec_Cancel"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/cancel"/>
+
+    </LinearLayout>
+
     <TextView
         style="@style/headerTextStyle_CN"
         android:text="新建记事本"
