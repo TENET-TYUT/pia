@@ -1,6 +1,8 @@
 package com.tenet.pia.entity;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable {
 
     /**
      *  记事本 id 唯一标识

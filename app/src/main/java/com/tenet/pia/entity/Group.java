@@ -1,9 +1,11 @@
 package com.tenet.pia.entity;
 
+import java.io.Serializable;
+
 /**
  *  群组实体类
  */
-public class Group {
+public class Group implements Serializable {
 
     /**
      *  群组 id 唯一标识

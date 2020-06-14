@@ -1,9 +1,11 @@
 package com.tenet.pia.entity;
 
+import java.io.Serializable;
+
 /**
  *  联系人实体类
  */
-public class Contact {
+public class Contact implements Serializable {
 
     /**
      *  联系人 id 唯一标识

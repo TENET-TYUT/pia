@@ -1,9 +1,11 @@
 package com.tenet.pia.entity;
 
+import java.io.Serializable;
+
 /**
  *  日程实体类
  */
-public class Schedule {
+public class Schedule implements Serializable {
 
     /**
      * 日程 id 唯一标识
