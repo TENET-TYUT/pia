@@ -67,11 +67,11 @@
                     android:src="@drawable/col"
                     />
             
-            <ListView
-                android:id="@+id/gm_lv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                 />
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="37.5dp"
+                android:text="· 人名1" />
 
         </LinearLayout>
         <ImageButton

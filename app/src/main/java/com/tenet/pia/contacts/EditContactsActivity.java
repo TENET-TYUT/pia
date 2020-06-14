@@ -16,6 +16,5 @@ public class EditContactsActivity extends Activity {
         setContentView(R.layout.activity_edit_contacts);
 
 
-
     }
 }
