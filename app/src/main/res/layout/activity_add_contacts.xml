@@ -5,38 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bkg"
-    tools:context=".contacts.EditContactsActivity">
+    tools:context="com.tenet.pia.contacts.AddContactsActivity">
 
 
-    <LinearLayout
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/ec_Cancel"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:background="@drawable/cancel"
-            android:onClick="click"
-            tools:ignore="OnClick" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/ec_Confirm"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:onClick="click"
-            android:background="@drawable/confirm"
-            tools:ignore="OnClick" />
-
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/ac_return"
+        android:layout_width="33dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/return_icon"
+        android:onClick="click"
+        tools:ignore="OnClick" />
 
 
     <LinearLayout
@@ -48,14 +29,14 @@
         <TextView
             style="@style/headerTextStyle_CN"
             android:layout_gravity="center_horizontal"
-            android:text="编辑联系人"
+            android:text="新建联系人"
             tools:ignore="MissingConstraints" />
 
         <TextView
             style="@style/headerTextStyle_EN"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
-            android:text="EDITCONTACT"
+            android:text="NEWCONTACT"
             tools:ignore="MissingConstraints" />
 
     </LinearLayout>
@@ -74,7 +55,7 @@
             android:background="@drawable/shade">
 
             <TextView
-                android:id="@+id/ec_txt_name"
+                android:id="@+id/ac_txt_name"
                 style="@style/listItemTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,12 +64,12 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ec_name"
+                android:id="@+id/ac_name"
                 style="@style/listItemTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/ec_txt_name"
+                android:layout_toRightOf="@id/ac_txt_name"
                 android:background="@null" />
 
 
@@ -101,7 +82,7 @@
             android:background="@drawable/shade">
 
             <TextView
-                android:id="@+id/ec_txt_phone"
+                android:id="@+id/ac_txt_phone"
                 style="@style/listItemTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,12 +91,12 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ec_phone"
+                android:id="@+id/ac_phone"
                 style="@style/listItemTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/ec_txt_phone"
+                android:layout_toRightOf="@id/ac_txt_phone"
                 android:background="@null" />
         </RelativeLayout>
 
@@ -127,7 +108,7 @@
             style="@style/listItemTextStyle">
 
             <TextView
-                android:id="@+id/ec_txt_email"
+                android:id="@+id/ac_txt_email"
                 style="@style/listItemTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -135,12 +116,12 @@
                 android:text="  邮箱：" />
 
             <EditText
-                android:id="@+id/ec_email"
+                android:id="@+id/ac_email"
                 style="@style/listItemTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/ec_txt_email"
+                android:layout_toRightOf="@id/ac_txt_email"
                 android:background="@null" />
         </RelativeLayout>
 
@@ -151,7 +132,7 @@
             android:background="@drawable/shade">
 
             <TextView
-                android:id="@+id/ec_txt_sex"
+                android:id="@+id/ac_txt_sex"
                 style="@style/listItemTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -160,12 +141,12 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ec_sex"
+                android:id="@+id/ac_sex"
                 style="@style/listItemTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/ec_txt_sex"
+                android:layout_toRightOf="@id/ac_txt_sex"
                 android:background="@null" />
         </RelativeLayout>
 
@@ -176,7 +157,7 @@
             android:background="@drawable/shade">
 
             <Button
-                android:id="@+id/ec_btn_group"
+                android:id="@+id/ac_btn_group"
                 style="@style/listItemTextStyle"
                 android:background="@null"
                 android:text="群组 >"
@@ -184,41 +165,26 @@
                 tools:ignore="OnClick" />
 
             <EditText
-                android:id="@+id/ec_group"
+                android:id="@+id/ac_group"
                 style="@style/listItemTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/ec_btn_group"
+                android:layout_toRightOf="@id/ac_btn_group"
                 android:background="@null"
                 android:textSize="20dp" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
-
-            <Button
-                android:id="@+id/ec_btn_determine"
-                style="@style/btnTextStyle"
-                android:background="@null"
-                android:layout_marginLeft="50dp"
-                android:onClick="click"
-                android:text="确定"
-                tools:ignore="OnClick" />
-
-            <Button
-                android:id="@+id/ec_btn_delete"
-                style="@style/btnTextStyle"
-                android:layout_toRightOf="@id/ec_btn_determine"
-                android:layout_marginLeft="20dp"
-                android:background="@null"
-                android:onClick="click"
-                android:text="删除"
-                tools:ignore="OnClick" />
-        </RelativeLayout>
+        <Button
+            android:id="@+id/ac_btn_determine"
+            style="@style/btnTextStyle"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:gravity="center"
+            android:onClick="click"
+            android:text="确定"
+            tools:ignore="OnClick" />
 
     </LinearLayout>
-
 </RelativeLayout>

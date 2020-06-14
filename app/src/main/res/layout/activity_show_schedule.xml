@@ -5,5 +5,116 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".schedule.ShowScheduleActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bkg">
+
+            <ImageButton
+                android:id="@+id/btn_return"
+                android:layout_width="26dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/return_icon" />
+
+            <TextView
+                android:id="@+id/header_text"
+                style="@style/headerTextStyle_CN"
+                android:layout_below="@id/btn_return"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="20dp"
+                android:text="日程" />
+
+            <TextView
+                android:id="@+id/header_text_en"
+                style="@style/headerTextStyle_EN"
+                android:layout_below="@id/header_text"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="22dp"
+                android:text="DATA" />
+
+            <LinearLayout
+                android:layout_width="352dp"
+                android:layout_height="61dp"
+                android:layout_below="@id/header_text_en"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/schedule_item_bkg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAY"
+                        android:textColor="#ff7926"
+                        android:textSize="15dp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:textColor="#ff7926"
+                        android:textSize="26dp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="clip_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mon, 1:30 to 3:30"
+                        android:textColor="#000"
+                        android:textSize="20dp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Watch movie with Diane"
+                        android:textColor="#848383"
+                        android:textSize="14dp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="19dp"
+                    android:background="@drawable/notes_schedule_item_btn" />
+            </LinearLayout>
+        </RelativeLayout>
+        <ImageButton
+            android:layout_width="86dp"
+            android:layout_height="82dp"
+            android:background="@drawable/add_btn_bkg"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="18dp"
+            />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
