@@ -38,8 +38,7 @@ public class Note implements Serializable {
         this.createTime = createTime;
     }
 
-    public Integer getId() {
-        return id;
+    public long getId() { return id;
     }
 
     public void setId(long id) {

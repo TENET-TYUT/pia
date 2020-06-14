@@ -55,6 +55,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_notetitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mon, 1:30 to 3:30"
@@ -63,6 +64,7 @@
                         android:typeface="sans" />
 
                     <TextView
+                        android:id="@+id/tv_notecontent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Watch movie with Diane"
@@ -84,6 +86,7 @@
             </LinearLayout>
         </RelativeLayout>
         <ImageButton
+            android:id="@+id/add_nt"
             android:layout_width="86dp"
             android:layout_height="82dp"
             android:background="@drawable/add_btn_bkg"
