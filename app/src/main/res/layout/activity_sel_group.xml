@@ -7,35 +7,15 @@
     android:background="@drawable/bkg"
     tools:context=".contacts.SelGroupActivity">
 
-    <LinearLayout
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/sg_Cancel"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:background="@drawable/cancel"
-            android:onClick="click"
-            tools:ignore="OnClick" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/sg_Confirm"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:onClick="click"
-            android:background="@drawable/confirm"
-            tools:ignore="OnClick" />
-
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/sg_return"
+        android:layout_width="33dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/return_icon"
+        android:onClick="click"
+        tools:ignore="OnClick" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,11 +37,15 @@
         android:orientation="vertical"
         android:layout_marginTop="170dp">
 
-        <TextView
-            style="@style/listItemTextStyle"
-            android:layout_gravity="center_horizontal"
-            android:text="高中同学"
-            tools:ignore="MissingConstraints" />
+        <ListView
+            android:id="@+id/Lv_sg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:dividerHeight="30dp"
+            android:divider="@null"/>
+
+
 
     </LinearLayout>
 

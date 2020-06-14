@@ -4,118 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bkg"
-    tools:context="com.tenet.pia.group.GroupMainActivity"
-    android:orientation="vertical">
+    tools:context="com.tenet.pia.group.GroupMainActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bkg"
+            android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/return_icon"
-        android:layout_width="25.5dp"
-        android:layout_height="15dp"
-        android:background="@drawable/return_icon"
-        android:layout_marginLeft="27.5dp"
-        android:layout_marginTop="32dp" />
+            <ImageButton
+                android:id="@+id/return_icon"
+                android:layout_width="25dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/return_icon" />
 
-    <TextView
-        android:id="@+id/LXR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="联系人"
-        android:textSize="31dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="20dp"
-        android:textColor="#111111"/>
-    <TextView
-        android:id="@+id/contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="C O N T A C T"
-        android:textSize="20dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#111111"/>
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="10dp">
+            <TextView
+                style="@style/headerTextStyle_CN"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="20dp"
+                android:text="联系人" />
 
-    <TextView
-        android:id="@+id/WDQZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我的群组"
-        android:textSize="18dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="20dp"
-        android:textColor="#111111"/>
-</LinearLayout>
+            <TextView
+                android:id="@+id/contact"
+                style="@style/headerTextStyle_EN"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="10dp"
+                android:text="C O N T A C T" />
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/col"
+                    android:layout_marginTop="15dp"
+                    />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        style="@style/myGroupTextStyle"
+                        android:id="@+id/gm_group"
+                        android:text="我的群组"
+                        android:background="@null"
+                        android:layout_marginLeft="25dp"
+                        />
+                    <TextView
+                        style="@style/myGroupTextStyle"
+                        android:text=">"
+                        android:layout_width="80dp"
+                        android:gravity="center"
+                        android:background="@null"
+                        android:textColor="#938f8f"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/col"
+                    />
+            
+            <ListView
+                android:id="@+id/gm_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
 
-    <TextView
-        android:id="@+id/RM1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="· 人名1"
-        android:textSize="18dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="37.5dp"
-        android:textColor="#111111"/>
-    <TextView
-        android:id="@+id/RM2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="· 人名2"
-        android:textSize="18dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="37.5dp"
-        android:textColor="#111111"/>
-    <TextView
-        android:id="@+id/RM3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="· 人名3"
-        android:textSize="18dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="37.5dp"
-        android:textColor="#111111"/>
-    <TextView
-        android:id="@+id/RM4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="· 人名4"
-        android:textSize="18dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="37.5dp"
-        android:textColor="#111111"/>
-    <TextView
-        android:id="@+id/RM5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="· 人名5"
-        android:textSize="18dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="37.5dp"
-        android:textColor="#111111"/>
-    <TextView
-        android:id="@+id/RM6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="· 人名6"
-        android:textSize="18dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="37.5dp"
-        android:textColor="#111111"/>
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/gm_add_btn"
+            android:layout_width="86dp"
+            android:layout_height="82dp"
+            android:background="@drawable/add_btn_bkg"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="18dp"
+            />
+    </FrameLayout>
 
-
-    <ImageButton
-        android:layout_width="86dp"
-        android:layout_height="82dp"
-        android:background="@drawable/add_btn_bkg"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="81dp"
-        />
 </LinearLayout>
