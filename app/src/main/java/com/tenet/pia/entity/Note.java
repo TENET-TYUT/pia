@@ -32,13 +32,13 @@ public class Note implements Serializable {
     }
 
 
-    public Note(String noteTitle, String noteContent, String createTime) {
+    public Note(String noteTitle, String noteContent, Long createTime) {
         this.noteTitle = noteTitle;
         this.noteContent = noteContent;
         this.createTime = createTime;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 

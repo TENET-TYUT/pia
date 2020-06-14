@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NoteDao {
+    private static final String ID = "id";
     private static final String NOTE_TITLE = "noteTitle";
     private static final String NOTE_CONTENT = "noteContent";
     private static final String CREATE_TIME = "createTime";
@@ -24,6 +25,7 @@ public class NoteDao {
     public void insert(Note note) {
         SQLiteDatabase db = dateBaseHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(ID, note.getId());
         values.put(NOTE_TITLE, note.getNoteTitle());
         values.put(NOTE_CONTENT, note.getNoteContent());
         values.put(NOTE_CONTENT, note.getNoteContent());
@@ -31,19 +33,33 @@ public class NoteDao {
         db.close();
     }
 
-    public void update(Note note){
+    public int update(Note note){
         SQLiteDatabase db = dateBaseHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(ID, note.getId());
         values.put(NOTE_TITLE,note.getNoteTitle());
         values.put(NOTE_CONTENT, note.getNoteContent());
         values.put(NOTE_CONTENT, note.getNoteContent());
-        long id=db.update(DateBaseHelper.NOTE_TABLE,values,"name=?",new String[]{})
+        int number=db.update(DateBaseHelper.NOTE_TABLE,values,"id=?",new Integer[]{note.getId()});
+        db.close();
+        return number;
     }
 
-    public void delete(Note note){
-
+    public int delete(Note note) {
+        SQLiteDatabase db = dateBaseHelper.getWritableDatabase();
+        int number = db.delete(DateBaseHelper.NOTE_TABLE, "_id=?", new Int[]{note.getId()});
+        db.close();
+        return number;
     }
 
+    public boolean find(long id){
+        SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
+        Cursor cursor = db.query(DateBaseHelper.NOTE_TABLE,null,"_id=?",new String[]{},null,null,null);
+        boolean result=cursor.moveToNext();
+        cursor.close();
+        db.close();
+        return result;
+    }
     public List<Note> query() {
         noteList = new ArrayList<>();
         SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
@@ -58,7 +74,6 @@ public class NoteDao {
             Note note = new Note(notetitle, notecontent,createtime);
             noteList.add(note);
         }
-
         db.close();
         return noteList;
     }
