@@ -32,7 +32,7 @@ public class Note implements Serializable {
     }
 
 
-    public Note(String noteTitle, String noteContent, long createTime) {
+    public Note(String noteTitle, String noteContent, String createTime) {
         this.noteTitle = noteTitle;
         this.noteContent = noteContent;
         this.createTime = createTime;
