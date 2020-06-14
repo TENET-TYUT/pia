@@ -37,7 +37,7 @@
                 android:layout_marginTop="22dp"
                 android:text="NOTEBOOK" />
 
-            <LinearLayout
+            <ListView
                 android:layout_width="352dp"
                 android:layout_height="61dp"
                 android:layout_below="@id/header_text_en"
@@ -81,7 +81,7 @@
                     android:layout_height="25dp"
                     android:layout_marginRight="19dp"
                     android:background="@drawable/notes_schedule_item_btn" />
-            </LinearLayout>
+            </ListView>
         </RelativeLayout>
         <ImageButton
             android:layout_width="86dp"
