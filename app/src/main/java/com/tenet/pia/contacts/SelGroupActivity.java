@@ -2,6 +2,7 @@ package com.tenet.pia.contacts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,9 +64,18 @@ public class SelGroupActivity extends AppCompatActivity {
                 } else {
                     view = convertView;
                 }
-                Group gp = groupList.get(position);
+                final Group group = groupList.get(position);
                 TextView name = (TextView) view.findViewById(R.id.sg_tv);
-                name.setText(gp.getGroupName());
+                name.setText(group.getGroupName());
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.putExtra("group", group);
+                        setResult(1,intent);
+                        finish();
+                    }
+                });
                 return view;
             }
         });
