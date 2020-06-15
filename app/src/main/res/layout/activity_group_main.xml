@@ -71,7 +71,8 @@
                 android:id="@+id/gm_lv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 />
+                android:dividerHeight="20dp"
+                android:divider="@null" />
 
         </LinearLayout>
         <ImageButton

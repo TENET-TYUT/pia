@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
     <ImageButton
+        android:id="@+id/ci_return"
         android:layout_width="25.5dp"
         android:layout_height="15dp"
         android:background="@drawable/return_icon"
@@ -27,7 +28,7 @@
         android:id="@+id/XM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mr.姓名|同学"
+        android:text="Mr.姓名"
         android:textSize="31dp"
         android:layout_marginLeft="26dp"
         android:layout_marginTop="52dp"
@@ -58,7 +59,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="110dp">
+        android:layout_marginTop="70dp">
         <Button
             android:id="@+id/delete"
             style="@style/btnTextStyle"
