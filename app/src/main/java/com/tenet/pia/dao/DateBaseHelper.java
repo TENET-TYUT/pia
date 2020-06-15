@@ -23,7 +23,7 @@ public class DateBaseHelper extends SQLiteOpenHelper {
         return instance;
     }
 
-    public DateBaseHelper(Context context) {
+    private DateBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -31,7 +31,7 @@ public class DateBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + GROUP_TABLE + " (id INTEGER primary key autoincrement, groupName text)");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + CONTACT_TABLE + " (contact_id INTEGER primary key autoincrement, name text, phone text, email text, gender text, groupName text, groupId INTERGER);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + NOTE_TABLE + " (id INTEGER primary key autoincrement, noteTitle text, noteContent text, long createTime)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + NOTE_TABLE + " (id INTEGER primary key autoincrement, noteTitle text, noteContent text, createTime long)");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + SCHEDULE_TABLE + " (id INTEGER primary key autoincrement, startTime long, endTime long, scheduleTitle text, scheduleDes text, scheduleLocation text)");
     }
 
