@@ -12,7 +12,7 @@ import com.tenet.pia.group.ShowGroupActivity;
 import com.tenet.pia.notes.ShowNotesActivity;
 import com.tenet.pia.schedule.ShowScheduleActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageButton mbtn_contacts;
     private ImageButton mbtn_schedule;
@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mbtn_contacts=(ImageButton) findViewById(R.id.btn_contacts);
-        mbtn_notes=(ImageButton) findViewById(R.id.btn_notes);
-        mbtn_schedule =(ImageButton)findViewById(R.id.btn_schedule);
+        mbtn_contacts = (ImageButton) findViewById(R.id.btn_contacts);
+        mbtn_notes = (ImageButton) findViewById(R.id.btn_notes);
+        mbtn_schedule = (ImageButton) findViewById(R.id.btn_schedule);
 
         mbtn_contacts.setOnClickListener(this);
         mbtn_notes.setOnClickListener(this);
@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_contacts:
-                Intent intent1 = new Intent(this,GroupMainActivity.class);
+                Intent intent1 = new Intent(this, GroupMainActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.btn_schedule:
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-
 
 
 }
