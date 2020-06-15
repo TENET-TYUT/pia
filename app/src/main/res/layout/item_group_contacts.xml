@@ -10,7 +10,7 @@
         android:gravity="center_vertical"
         style="@style/listItemTextStyle"
         android:layout_marginLeft="32dp"
-        android:text="同学"
+        android:text="·"
         tools:ignore="MissingConstraints"
         />
 
@@ -18,20 +18,9 @@
         android:layout_height="45dp"
         android:gravity="center_vertical"
         style="@style/listItemTextStyle"
-        android:layout_marginLeft="32dp"
-        android:text=">"
+        android:layout_marginLeft="22dp"
+        android:text="人名"
         tools:ignore="MissingConstraints"
         />
 
-    <TextView
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/delBtn"
-        style="@style/listItemTextStyle"
-        android:text="删 除"
-        android:layout_marginRight="32dp"
-        android:background="@null"
-        />
 </LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tenet.pia.group.EditGroupActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bkg"
+        tools:context=".group.AddGroupActivity">
+
+        <ImageButton
+            android:id="@+id/ag_return"
+            android:layout_width="33dp"
+            android:layout_height="21dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/return_icon" />
+
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="125dp">
+
+            <TextView
+                style="@style/headerTextStyle_CN"
+                android:layout_gravity="center_horizontal"
+                android:text="编 辑 群 组"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                style="@style/headerTextStyle_EN"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="E D I T G R O U P"
+                tools:ignore="MissingConstraints" />
+
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/edit_group"
+            style="@style/listItemTextStyle"
+            android:layout_width="295dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/ll_header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="89dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/shade" />
+        <Button
+            android:id="@+id/edit_btn"
+            style="@style/btnTextStyle"
+            android:background="@null"
+            android:layout_below="@id/edit_group"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="105dp"
+            android:text="确 定"
+            />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

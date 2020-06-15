@@ -49,4 +49,22 @@ public class GroupDao {
 
     }
 
+    public int delete(Group group){
+        SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
+        int number = db.delete(DateBaseHelper.GROUP_TABLE,ID + "=?",new String[]{group.getId() + ""});
+        db.close();
+        return number;
+    }
+
+    public int update(Group group){
+        SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(GROUP_NAME, group.getGroupName());
+        int number = db.update(DateBaseHelper.GROUP_TABLE, values, ID + "=?", new String[]{group.getId() + ""});
+        db.close();
+        return number;
+    }
+
+
+
 }
