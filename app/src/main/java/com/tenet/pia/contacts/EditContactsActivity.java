@@ -2,7 +2,6 @@ package com.tenet.pia.contacts;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -19,10 +18,8 @@ import android.widget.Toast;
 
 import com.tenet.pia.R;
 import com.tenet.pia.dao.ContactDao;
-import com.tenet.pia.dao.DateBaseHelper;
 import com.tenet.pia.entity.Contact;
 import com.tenet.pia.entity.Group;
-import com.tenet.pia.group.GroupMainActivity;
 
 public class EditContactsActivity extends Activity implements View.OnClickListener {
 
@@ -41,7 +38,6 @@ public class EditContactsActivity extends Activity implements View.OnClickListen
     private long groupID;
     private Contact contact;
     private ContactDao contactDao;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +45,7 @@ public class EditContactsActivity extends Activity implements View.OnClickListen
 
         //接受ContactsInfoActivity传来的contact对象
         contact = (Contact) getIntent().getSerializableExtra("contact");
+        gender = contact.getGender();
         //初始化代码
         init();
 
@@ -81,7 +78,7 @@ public class EditContactsActivity extends Activity implements View.OnClickListen
         mEmail.setText(contact.getEmail());
         mGroup.setText(contact.getGroupName());
 
-        if (contact.getGender() == "女") {
+        if (contact.getGender().equals("女")) {
             radioGroup.check(femaleButton.getId());
         } else {
             radioGroup.check(maleButton.getId());
@@ -91,7 +88,6 @@ public class EditContactsActivity extends Activity implements View.OnClickListen
         mReturn.setOnClickListener(this);
         radioGroup.setOnClickListener(this);
         btnGroup.setOnClickListener(this);
-
         contactDao = new ContactDao(this);
     }
 
@@ -133,8 +129,8 @@ public class EditContactsActivity extends Activity implements View.OnClickListen
             Toast.makeText(this, "邮箱格式错误", Toast.LENGTH_SHORT).show();
             return false;
         } else if (contact.getGroupName().length() == 0) {
-            Toast.makeText(this, "组别为空", Toast.LENGTH_SHORT).show();
-            return false;
+            contact.setGroupId(-1);
+            contact.setGroupName("未分组");
         }
         return true;
     }
@@ -172,7 +168,8 @@ public class EditContactsActivity extends Activity implements View.OnClickListen
             if (resultCode == 1) {
                 Group group = (Group) data.getSerializableExtra("group");
                 mGroup.setText(group.getGroupName());
-                groupID = group.getId();
+                contact.setGroupId(group.getId());
+                contact.setGroupName(group.getGroupName());
             }
         }
     }
