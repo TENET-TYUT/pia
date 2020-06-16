@@ -23,6 +23,7 @@ public class ContactDao {
     private DateBaseHelper dateBaseHelper;
 
     private ArrayList<Contact> contactList;
+    private ArrayList<Contact> FcontactList;
 
     public ContactDao(Context context){
         dateBaseHelper = DateBaseHelper.getInstance(context);
@@ -61,6 +62,48 @@ public class ContactDao {
             contactList.add(contact);
         }
 
+    public List<Contact> queryById(Group group) {
+
+        contactList = new ArrayList<>();
+        FcontactList = new ArrayList<>();
+        SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
+        //Cursor cursor1 = db.query(DateBaseHelper.CONTACT_TABLE, null, CONTACT_GROUPID + "=?", new String[]{idd + ""}, null, null, null);
+        Cursor cursor1 = db.query(DateBaseHelper.CONTACT_TABLE, null, null, null, null, null, null);
+
+        if (cursor1.getCount() != 0) {
+            cursor1.moveToFirst();
+        }
+        while (cursor1.moveToNext()) {
+            Long id = cursor1.getLong(cursor1.getColumnIndex(CONTACT_ID));
+            String name = cursor1.getString(cursor1.getColumnIndex(CONTACT_NAME));
+            String phone = cursor1.getString(cursor1.getColumnIndex(CONTACT_PHONE));
+            String email = cursor1.getString(cursor1.getColumnIndex(CONTACT_EMAIL));
+            String gender = cursor1.getString(cursor1.getColumnIndex(CONTACT_GENDER));
+            long groupid = cursor1.getLong(cursor1.getColumnIndex(CONTACT_GROUPID));
+            String groupname = cursor1.getString(cursor1.getColumnIndex(CONTACT_GROUPNAME));
+            Contact contact = new Contact(id, name, phone, email, gender, groupid, groupname);
+            contactList.add(contact);
+        }
+        cursor1.close();
+        db.close();
+        for(Contact contact: contactList) {
+            if(contact.getGroupId() == group.getId()) FcontactList.add(contact);
+        }
+        return FcontactList;
+    }
+
+    public Contact find(long id) {
+        SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
+        Cursor cursor = db.query(DateBaseHelper.CONTACT_TABLE, null, CONTACT_ID + "=?", new String[]{id + ""}, null, null, null);
+        cursor.moveToNext();
+        String name = cursor.getString(cursor.getColumnIndex(CONTACT_NAME));
+        String phone = cursor.getString(cursor.getColumnIndex(CONTACT_PHONE));
+        String email = cursor.getString(cursor.getColumnIndex(CONTACT_EMAIL));
+        String gender = cursor.getString(cursor.getColumnIndex(CONTACT_GENDER));
+        long groupid = cursor.getLong(cursor.getColumnIndex(CONTACT_GROUPID));
+        String groupname = cursor.getString(cursor.getColumnIndex(CONTACT_GROUPNAME));
+        Contact contact = new Contact(id, name, phone, email, gender, groupid, groupname);
+        cursor.close();
         db.close();
         return contactList;
     }

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".contacts.AddContactsActivity"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".group.EditGroupActivity" />
+        <activity android:name=".contacts.AddContactsActivity" />
         <activity android:name=".notes.EditNotesActivity" />
         <activity android:name=".notes.AddNotesActivity" />
         <activity android:name=".notes.ShowNotesActivity" />

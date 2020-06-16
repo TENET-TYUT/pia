@@ -48,7 +48,6 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contacts);
-
         init();
         genderradio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
