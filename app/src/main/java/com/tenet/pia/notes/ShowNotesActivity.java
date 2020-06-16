@@ -16,30 +16,37 @@ import android.widget.TextView;
 import com.tenet.pia.R;
 import com.tenet.pia.dao.NoteDao;
 import com.tenet.pia.entity.Note;
-import com.tenet.pia.notes.AddNotesActivity;
-import com.tenet.pia.notes.ShowNotesActivity;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class ShowNotesActivity extends AppCompatActivity {
-    private ImageButton button;
+    private ImageButton buttonAdd;
+    private ImageButton buttonReturn;
     private ListView lv;
     private NoteDao noteDao;
     private ArrayList<Note> noteList;
-    private String addNoteName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_notes);
 
-        button = (ImageButton) findViewById(R.id.add_nt);
+        buttonAdd = (ImageButton) findViewById(R.id.add_nt);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 to_add();
+            }
+        });
+
+        buttonReturn = (ImageButton) findViewById(R.id.btn_return);
+        buttonReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
@@ -63,12 +70,12 @@ public class ShowNotesActivity extends AppCompatActivity {
 
             @Override
             public Object getItem(int position) {
-                return null;
+                return noteList.get(position);
             }
 
             @Override
             public long getItemId(int position) {
-                return 0;
+                return position;
             }
 
             @Override
@@ -77,46 +84,46 @@ public class ShowNotesActivity extends AppCompatActivity {
                 if (convertView == null) {
                     LayoutInflater inflater = ShowNotesActivity.this.getLayoutInflater();
                     view = inflater.inflate(R.layout.item_show_note, null);
-                    //view = View.inflate(getBaseContext(),R.layout.item,null);
                 } else {
                     view = convertView;
                 }
-                Note nt = noteList.get(position);
-                TextView name = (TextView) view.findViewById(R.id.item_show_note_tv);
-                name.setText(nt.getGroupName());
+                final Note nt = noteList.get(position);
+                TextView noteTitle = (TextView) view.findViewById(R.id.tv_noteTitle);
+                noteTitle.setText(nt.getNoteTitle());
+                TextView noteContent = (TextView) view.findViewById(R.id.tv_noteContent);
+                noteContent.setText(nt.getNoteContent());
+                TextView noteCreateTime = (TextView) view.findViewById(R.id.tv_createTime);
+                Date createDate = new Date(nt.getCreateTime());
+                noteCreateTime.setText(createDate.getMonth() + 1 + "月" + createDate.getDate() + "日");
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(ShowNotesActivity.this,EditNotesActivity.class);
+                        intent.putExtra("note",nt);
+                        startActivityForResult(intent,1);
+                    }
+                });
                 return view;
             }
         });
     }
 
     public void to_add() {
-        Intent intent = new Intent(this, AddGroupActivity.class);
-        startActivityForResult(intent,1);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(addGroupName.length() > 0) {
-            refreshData();
-        }
-
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        if(addGroupName.length() > 0) {
-            refreshData();
-        }
+        Intent intent = new Intent(this, AddNotesActivity.class);
+        startActivityForResult(intent, 1);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1) {
-            if(resultCode == 1) {
-                addGroupName = data.getStringExtra("groupName");
+        if(data!=null){
+            if(requestCode==1){
+                if(resultCode==1){
+                    boolean isChange = data.getBooleanExtra("change", true);
+                    if(isChange) {
+                        refreshData();
+                    }
+                }
             }
         }
     }

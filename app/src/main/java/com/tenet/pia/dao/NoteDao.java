@@ -24,10 +24,9 @@ public class NoteDao {
     public void insert(Note note) {
         SQLiteDatabase db = dateBaseHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(ID, note.getId());
         values.put(NOTE_TITLE, note.getNoteTitle());
         values.put(NOTE_CONTENT, note.getNoteContent());
-        values.put(NOTE_CONTENT, note.getNoteContent());
+        values.put(CREATE_TIME, note.getCreateTime());
         long id = db.insert(DateBaseHelper.NOTE_TABLE, null, values);
         db.close();
     }
