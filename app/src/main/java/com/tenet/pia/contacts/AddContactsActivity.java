@@ -4,11 +4,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,13 +17,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.tenet.pia.R;
 import com.tenet.pia.dao.ContactDao;
 import com.tenet.pia.dao.DateBaseHelper;
 import com.tenet.pia.entity.Contact;
 import com.tenet.pia.entity.Group;
-import com.tenet.pia.group.GroupMainActivity;
 
 public class AddContactsActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,9 +37,8 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
     private RadioButton radioMale;
     private RadioButton radioFemal;
 
-    private DateBaseHelper dateBaseHelper;
     private ContactDao contactDao;
-    private String gender = "男";
+    private String gender = "男",groupName;
     private long groupID;
     private String contactName, contactPhone, contactEmail, contactGender, contactGroupname;
 
@@ -51,9 +47,13 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contacts);
-
+        //初始化方法
         init();
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
         genderradio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -64,7 +64,6 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
                 }
             }
         });
-
     }
 
     public void init() {
@@ -82,7 +81,6 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
         mbtn.setOnClickListener(this);
         mreturn.setOnClickListener(this);
         mbtn_group.setOnClickListener(this);
-
         contactDao = new ContactDao(this);
     }
 
@@ -99,6 +97,7 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
                 contactEmail = memail.getText().toString().trim();
                 contactGender = gender;
                 contactGroupname = mgroup.getText().toString().trim();
+                Log.i("ss", gender);
                 if (checkNull()) {
                     showNormalDialog(1);
                 }
@@ -119,6 +118,7 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
                 Group group = (Group) data.getSerializableExtra("group");
                 mgroup.setText(group.getGroupName());
                 groupID = group.getId();
+                groupName = group.getGroupName();
 
             }
         }
@@ -138,15 +138,15 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
             Toast.makeText(this, "邮箱格式错误", Toast.LENGTH_SHORT).show();
             return false;
         } else if (contactGroupname.length() == 0) {
-            Toast.makeText(this, "组别为空", Toast.LENGTH_SHORT).show();
-            return false;
+            groupID=-1;
+            groupName="未分组";
         }
         return true;
     }
 
     private void insertDate() {
 
-        Contact contact = new Contact(contactName, contactPhone, contactEmail, contactGender, groupID, contactGroupname);
+        Contact contact = new Contact(contactName, contactPhone, contactEmail, contactGender, groupID, groupName);
         contactDao.insert(contact);
     }
 

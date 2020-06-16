@@ -37,51 +37,18 @@
                 android:layout_marginTop="22dp"
                 android:text="NOTEBOOK" />
 
-            <LinearLayout
+            <ListView
+                android:id="@+id/Lv_sn"
                 android:layout_width="352dp"
-                android:layout_height="61dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/header_text_en"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="27dp"
-                android:background="@drawable/notes_item_bkg"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:dividerHeight="28.5dp"
+                android:divider="@null"
+                >
+            </ListView>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="clip_vertical"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mon, 1:30 to 3:30"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:typeface="sans" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Watch movie with Diane"
-                        android:textColor="#848383"
-                        android:textSize="14dp"
-                        android:typeface="sans" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <ImageButton
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="19dp"
-                    android:background="@drawable/notes_schedule_item_btn" />
-            </LinearLayout>
         </RelativeLayout>
         <ImageButton
             android:layout_width="86dp"

@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -18,7 +16,6 @@ import com.tenet.pia.R;
 import com.tenet.pia.dao.ContactDao;
 import com.tenet.pia.entity.Contact;
 import com.tenet.pia.group.GroupMainActivity;
-import com.tenet.pia.group.ShowGroupActivity;
 
 public class ContactsInfoActivity extends AppCompatActivity implements View.OnClickListener {
     private Button editBtn;
@@ -60,10 +57,12 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
         //数据库查询后插入
         contact = contactDao.find(contactId);
 
-        if (contact.getGender() == "女") {
-            mName.setText("Ms." + contact.getName());
+        String gender = contact.getGender();
+
+        if (contact.getGender().equals("女")) {//if (contact.getGender()=="女") {//
+            mName.setText("Ms." + contact.getName() + " | " + contact.getGroupName() + "|" + contact.getGroupId());
         } else {
-            mName.setText("Mr." + contact.getName());
+            mName.setText("Mr." + contact.getName() + " | " + contact.getGroupName() + "|" + contact.getGroupId());
         }
         mPhone.setText(contact.getPhone());
         mEmail.setText(contact.getEmail());
