@@ -51,6 +51,7 @@
 
         </RelativeLayout>
         <ImageButton
+            android:id="@+id/add_nt"
             android:layout_width="86dp"
             android:layout_height="82dp"
             android:background="@drawable/add_btn_bkg"

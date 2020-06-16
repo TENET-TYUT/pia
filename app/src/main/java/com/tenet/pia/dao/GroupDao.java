@@ -29,7 +29,6 @@ public class GroupDao {
         values.put(GROUP_NAME, group.getGroupName());
         long id = db.insert(DateBaseHelper.GROUP_TABLE, null, values);
         db.close();
-
     }
 
     public List<Group> query() {

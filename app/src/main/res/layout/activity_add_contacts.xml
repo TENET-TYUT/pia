@@ -182,10 +182,9 @@
                 android:onClick="click"
                 tools:ignore="OnClick" />
 
-            <TextView
+            <EditText
                 android:id="@+id/ac_group"
                 style="@style/listItemTextStyle"
-                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
