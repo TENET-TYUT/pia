@@ -36,7 +36,6 @@ public class NoteDao {
         ContentValues values = new ContentValues();
         values.put(NOTE_TITLE, note.getNoteTitle());
         values.put(NOTE_CONTENT, note.getNoteContent());
-        values.put(NOTE_CONTENT, note.getNoteContent());
         int number = db.update(DateBaseHelper.NOTE_TABLE, values, ID + "=?", new String[]{String.valueOf(note.getId())});
         db.close();
         return number;
