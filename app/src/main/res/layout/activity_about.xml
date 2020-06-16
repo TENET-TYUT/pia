@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tenet.pia.AboutActivity"
+    android:background="@drawable/bkg"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:gravity="center_horizontal">
+
+    <ImageButton
+        android:layout_width="136.55dp"
+        android:layout_height="136.55dp"
+        android:layout_marginTop="56.2dp"
+        android:background="@drawable/pia" />
+
+    <TextView
+        style="@style/headerTextStyle_CN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24.8dp"
+        android:text="P I A  一 个 载 体"/>
+
+    <TextView
+        style="@style/aboutTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Personal information assistant system
+PIA products are suitable for personal use aiming at many business people busy professionals，students with learning tasks ，etc."
+        android:gravity="center"
+        android:layout_marginTop="28.35dp"
+        android:lineSpacingExtra="25dp"
+        />
+
+    <TextView
+        style="@style/aboutTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The main functions of this system include: address book management, record management, schedule management, system management and other modules."
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:lineSpacingExtra="25dp"
+        />
+
+    <ImageButton
+        android:layout_width="89dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="25.5dp"
+        android:background="@drawable/logo" />
+
+</LinearLayout>

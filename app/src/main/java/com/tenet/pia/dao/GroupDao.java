@@ -14,6 +14,7 @@ public class GroupDao {
 
     private static final String GROUP_NAME = "groupName";
     private static final String ID = "id";
+    private static final String GROUP_ID = "groupId";
     private DateBaseHelper dateBaseHelper;
     private ArrayList<Group> groupList;
 
@@ -40,7 +41,7 @@ public class GroupDao {
         }
         while(cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex(GROUP_NAME));
-            int id = cursor.getInt(cursor.getColumnIndex(ID));
+           long id = cursor.getLong(cursor.getColumnIndex(ID));
             Group group = new Group(id,name);
             groupList.add(group);
         }
@@ -51,7 +52,11 @@ public class GroupDao {
 
     public int delete(Group group){
         SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(GROUP_ID, -1);
+        values.put(GROUP_NAME, "未分组");
         int number = db.delete(DateBaseHelper.GROUP_TABLE,ID + "=?",new String[]{group.getId() + ""});
+        db.update(DateBaseHelper.CONTACT_TABLE, values, GROUP_ID + "=?", new String[]{group.getId() + ""});
         db.close();
         return number;
     }

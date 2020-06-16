@@ -26,4 +26,7 @@
     <style name="homeIndexTextStyle" parent="headerTextStyle_CN">
         <item name="android:textSize">15dp</item>
     </style>
+    <style name="aboutTextStyle" parent="headerTextStyle_CN">
+        <item name="android:textSize">17dp</item>
+    </style>
 </resources>

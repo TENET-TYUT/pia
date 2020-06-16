@@ -47,7 +47,12 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contacts);
+        //Updated upstream;
         //初始化方法
+
+
+
+        //Stashed changes;
         init();
     }
 

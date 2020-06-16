@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.tenet.pia.R;
 import com.tenet.pia.dao.GroupDao;
 import com.tenet.pia.entity.Group;
+import com.tenet.pia.group.AddGroupActivity;
 
 
 import java.util.ArrayList;
@@ -22,18 +24,38 @@ public class SelGroupActivity extends AppCompatActivity {
     private ListView lv;
     private GroupDao groupDao;
     private ArrayList<Group> groupList;
+    private ImageButton add_sg;
+    private ImageButton returnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sel_group);
+        final Intent intent = new Intent(this, AddGroupActivity.class);
+        add_sg = (ImageButton) findViewById(R.id.add_sg);
+        returnButton = (ImageButton) findViewById(R.id.sg_return);
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
         refreshData();
     }
 
     public void refreshData() {
+        final Intent intent = new Intent(this, AddGroupActivity.class);
+        add_sg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
         groupDao = new GroupDao(this);
         groupList = (ArrayList<Group>) groupDao.query();
+
 
         lv = (ListView) findViewById(R.id.Lv_sg);
 
@@ -79,6 +101,18 @@ public class SelGroupActivity extends AppCompatActivity {
                 return view;
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshData();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        refreshData();
     }
 
 

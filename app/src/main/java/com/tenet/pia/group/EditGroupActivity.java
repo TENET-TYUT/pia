@@ -18,7 +18,6 @@ import com.tenet.pia.entity.Group;
 
 public class EditGroupActivity extends AppCompatActivity {
     private Group group;
-    private Group newGroup;
     private GroupDao groupDao;
     private EditText et_eg;
     private Button btn_eg;
@@ -42,7 +41,6 @@ public class EditGroupActivity extends AppCompatActivity {
         Intent intent = getIntent();
         group = (Group) intent.getSerializableExtra("group");
         et_eg.setText(group.getGroupName());
-
         btn_eg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,26 +51,31 @@ public class EditGroupActivity extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("保存提醒").setMessage("是否确定保存？")
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int i) {
-                        dealData();
-                        finish();
-                    }
-                }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                }).create();
-        groupName = et_eg.getText().toString().trim();
-        if (groupName.length() > 0) {
-            dialog.show();
-        } else {
+        if (et_eg.getText().toString().trim().equals(group.getGroupName())){
             finish();
+        }else {
+            AlertDialog dialog = new AlertDialog.Builder(this)
+                    .setTitle("保存提醒").setMessage("是否确定保存？")
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            dealData();
+                            finish();
+                        }
+                    }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    }).create();
+            groupName = et_eg.getText().toString().trim();
+            if (groupName.length() > 0) {
+                dialog.show();
+            } else {
+                finish();
+            }
         }
+
     }
 
     public void dealData() {

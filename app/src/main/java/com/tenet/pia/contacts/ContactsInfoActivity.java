@@ -35,7 +35,7 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_contacts_info);
         contactDao = new ContactDao(this);
         Intent intent = getIntent();
-        contactId = intent.getLongExtra("contactId", 0);
+        contactId = intent.getLongExtra("contactId",-1);
         init();
         refreshData();
     }

@@ -91,6 +91,29 @@ public class ContactDao {
         return contactList;
     }
 
+    public List<Contact> queryById(Group group) {
+        contactList = new ArrayList<>();
+        SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
+        Cursor cursor1 = db.query(DateBaseHelper.CONTACT_TABLE, null, CONTACT_GROUPID + "=?", new String[]{group.getId() + ""}, null, null, null);
+        if (cursor1.getCount() != 0) {
+            cursor1.moveToFirst();
+        }
+        while (cursor1.moveToNext()) {
+            Long id = cursor1.getLong(cursor1.getColumnIndex(CONTACT_ID));
+            String name = cursor1.getString(cursor1.getColumnIndex(CONTACT_NAME));
+            String phone = cursor1.getString(cursor1.getColumnIndex(CONTACT_PHONE));
+            String email = cursor1.getString(cursor1.getColumnIndex(CONTACT_EMAIL));
+            String gender = cursor1.getString(cursor1.getColumnIndex(CONTACT_GENDER));
+            long groupid = cursor1.getLong(cursor1.getColumnIndex(CONTACT_GROUPID));
+            String groupname = cursor1.getString(cursor1.getColumnIndex(CONTACT_GROUPNAME));
+            Contact contact = new Contact(id, name, phone, email, gender, groupid, groupname);
+            contactList.add(contact);
+        }
+        cursor1.close();
+        db.close();
+        return contactList;
+    }
+
     public Contact find(long id) {
         SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
         Cursor cursor = db.query(DateBaseHelper.CONTACT_TABLE, null, CONTACT_ID + "=?", new String[]{id + ""}, null, null, null);
