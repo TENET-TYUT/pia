@@ -66,6 +66,7 @@ public class GroupDao {
         ContentValues values = new ContentValues();
         values.put(GROUP_NAME, group.getGroupName());
         int number = db.update(DateBaseHelper.GROUP_TABLE, values, ID + "=?", new String[]{group.getId() + ""});
+        db.update(DateBaseHelper.CONTACT_TABLE, values, GROUP_ID + "=?", new String[]{group.getId() + ""});
         db.close();
         return number;
     }

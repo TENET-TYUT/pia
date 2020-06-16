@@ -28,6 +28,7 @@ public class ContactDao {
     private DateBaseHelper dateBaseHelper;
 
     private ArrayList<Contact> contactList;
+    private ArrayList<Contact> FcontactList;
 
     public ContactDao(Context context) {
         dateBaseHelper = DateBaseHelper.getInstance(context);
@@ -92,9 +93,13 @@ public class ContactDao {
     }
 
     public List<Contact> queryById(Group group) {
+
         contactList = new ArrayList<>();
+        FcontactList = new ArrayList<>();
         SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
-        Cursor cursor1 = db.query(DateBaseHelper.CONTACT_TABLE, null, CONTACT_GROUPID + "=?", new String[]{group.getId() + ""}, null, null, null);
+        //Cursor cursor1 = db.query(DateBaseHelper.CONTACT_TABLE, null, CONTACT_GROUPID + "=?", new String[]{idd + ""}, null, null, null);
+        Cursor cursor1 = db.query(DateBaseHelper.CONTACT_TABLE, null, null, null, null, null, null);
+
         if (cursor1.getCount() != 0) {
             cursor1.moveToFirst();
         }
@@ -111,7 +116,10 @@ public class ContactDao {
         }
         cursor1.close();
         db.close();
-        return contactList;
+        for(Contact contact: contactList) {
+            if(contact.getGroupId() == group.getId()) FcontactList.add(contact);
+        }
+        return FcontactList;
     }
 
     public Contact find(long id) {
