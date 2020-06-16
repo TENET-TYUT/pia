@@ -7,25 +7,44 @@
     tools:context="com.tenet.pia.notes.AddNotesActivity"
     android:orientation="vertical"
     android:background="@drawable/bkg">
-    <ImageView
-        android:id="@+id/return_icon"
-        android:layout_width="25.5dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="32.75dp"
-        android:layout_marginLeft="36.75dp"
-        android:background="@drawable/return_icon"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center_vertical">
+        <ImageButton
+            android:id="@+id/return_icon"
+            android:layout_width="25.5dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="36.75dp"
+            android:background="@drawable/return_icon" />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"/>
+        <Button
+            android:id="@+id/delete_btn"
+            style="@style/headerTextStyle_EN"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:text="删除"
+            android:layout_marginRight="36.75dp"
+
+            />
+    </LinearLayout>
+
     <TextView
         style="@style/headerTextStyle_CN"
-        android:text="新建记事本"
-        android:layout_marginTop="28dp"
+        android:text="编辑记事本"
         android:layout_marginLeft="36dp"
         />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="100dp"
         android:layout_marginTop="40dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         >
         <TextView
             style="@style/listItemTextStyle"
@@ -35,10 +54,14 @@
         <EditText
             android:id="@+id/notes_title"
             style="@style/listItemTextStyle"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_below="@id/tv_bt"
+            android:padding="5dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@null"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:background="#F0EBE5"
             />
     </LinearLayout>
     <LinearLayout
@@ -56,13 +79,15 @@
         <EditText
             android:id="@+id/notes_content"
             style="@style/listItemTextStyle"
+            android:padding="5dp"
+            android:gravity="top"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="36dp"
             android:layout_marginRight="36dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:maxLines="10"
-            android:background="@null"
+            android:background="#F0EBE5"
             />
     </LinearLayout>
 </LinearLayout>
