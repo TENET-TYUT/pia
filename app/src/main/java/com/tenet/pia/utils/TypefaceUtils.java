@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.widget.TextView;
 
-public class TypefaceUtil {
+public class TypefaceUtils {
 
     // 上下文
     private Context context;
@@ -15,7 +15,7 @@ public class TypefaceUtil {
      * @param context
      * @param ttfPath
      */
-    public TypefaceUtil(Context context, String ttfPath) {
+    public TypefaceUtils(Context context, String ttfPath) {
         this.context = context;
         this.typeface = getTypefaceFromTTF(ttfPath);
     }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="352dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/header_text_en"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/schedule_item_bkg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="MAY"
+                android:textColor="#ff7926"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:typeface="sans"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="25"
+                android:textColor="#ff7926"
+                android:textSize="26dp"
+                android:typeface="sans"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="clip_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mon, 1:30 to 3:30"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Watch movie with Diane"
+                android:textColor="#848383"
+                android:textSize="14dp"
+                android:typeface="sans" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="19dp"
+            android:background="@drawable/notes_schedule_item_btn" />
+    </LinearLayout>
+
+</LinearLayout>
