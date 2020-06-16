@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.tenet.pia.group.GroupMainActivity;
-import com.tenet.pia.group.ShowGroupActivity;
 import com.tenet.pia.notes.ShowNotesActivity;
 import com.tenet.pia.schedule.ShowScheduleActivity;
 
