@@ -28,10 +28,20 @@
         style="@style/aboutTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="薛琛丨程一铭丨于博文丨段如冰丨石家睿"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:lineSpacingExtra="25dp"
+        />
+
+    <TextView
+        style="@style/aboutTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Personal information assistant system
 PIA products are suitable for personal use aiming at many business people busy professionals，students with learning tasks ，etc."
         android:gravity="center"
-        android:layout_marginTop="28.35dp"
+        android:layout_marginTop="20dp"
         android:lineSpacingExtra="25dp"
         />
 
@@ -41,9 +51,11 @@ PIA products are suitable for personal use aiming at many business people busy p
         android:layout_height="wrap_content"
         android:text="The main functions of this system include: address book management, record management, schedule management, system management and other modules."
         android:gravity="center"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:lineSpacingExtra="25dp"
         />
+
+
 
     <ImageButton
         android:layout_width="89dp"
