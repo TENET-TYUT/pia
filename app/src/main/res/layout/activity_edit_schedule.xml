@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="65dp"
         android:orientation="vertical">
 
         <TextView
@@ -173,52 +173,6 @@
 
             <TextView
                 android:id="@+id/end_time"
-                style="@style/listItemTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="28dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="13dp"
-                android:background="@null" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="296dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/shade"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/listItemTextStyle"
-                android:layout_marginLeft="13dp"
-                android:text="提醒时间:" />
-
-            <TextView
-                android:hint="5分钟前"
-                android:id="@+id/advance_time"
-                style="@style/listItemTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="28dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="13dp"
-                android:background="@null" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="296dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/shade"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/listItemTextStyle"
-                android:layout_marginLeft="13dp"
-                android:text="重复规则:" />
-
-            <TextView
-                android:hint="不重复"
-                android:id="@+id/rule"
                 style="@style/listItemTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
