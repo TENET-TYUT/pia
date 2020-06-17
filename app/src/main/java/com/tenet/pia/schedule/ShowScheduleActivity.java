@@ -65,11 +65,13 @@ public class ShowScheduleActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == 1) {
-                String success = data.getStringExtra("success");
-                if (success.equals("true")) {
-                    renderListView();
+        if(data != null) {
+            if (requestCode == 1) {
+                if (resultCode == 1) {
+                    String success = data.getStringExtra("success");
+                    if (success.equals("true")) {
+                        renderListView();
+                    }
                 }
             }
         }
