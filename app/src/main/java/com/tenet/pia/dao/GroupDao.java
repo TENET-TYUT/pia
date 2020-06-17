@@ -36,9 +36,6 @@ public class GroupDao {
         groupList = new ArrayList<>();
         SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
         Cursor cursor = db.query(DateBaseHelper.GROUP_TABLE,null,null,null,null,null,null);
-        if (cursor.getCount() != 0) {
-            cursor.moveToFirst();
-        }
         while(cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex(GROUP_NAME));
             long id = cursor.getLong(cursor.getColumnIndex(ID));
