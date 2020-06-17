@@ -36,6 +36,9 @@ public class GroupMainActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_main);
 
+        //设置手机应用内部状态栏字体图标为黑色
+        changeStatusBarTextImgColor(true);
+
         contactDao = new ContactDao(this);
         contactArrayList = new ArrayList<Contact>();
 
@@ -126,5 +129,18 @@ public class GroupMainActivity extends AppCompatActivity implements View.OnClick
     protected void onRestart() {
         super.onRestart();
         refreshData();
+    }
+
+    /**
+     * 界面设置状态栏字体颜色
+     */
+    public void changeStatusBarTextImgColor(boolean isBlack) {
+        if (isBlack) {
+            //设置状态栏黑色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+            //恢复状态栏白色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+        }
     }
 }

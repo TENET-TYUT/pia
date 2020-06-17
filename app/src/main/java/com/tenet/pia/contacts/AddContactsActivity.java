@@ -46,6 +46,8 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contacts);
+        //设置手机应用内部状态栏字体图标为黑色
+        changeStatusBarTextImgColor(true);
         //初始化方法
         init();
     }
@@ -171,6 +173,19 @@ public class AddContactsActivity extends AppCompatActivity implements View.OnCli
                     }
                 })
                 .show();
+    }
+
+    /**
+     * 界面设置状态栏字体颜色
+     */
+    public void changeStatusBarTextImgColor(boolean isBlack) {
+        if (isBlack) {
+            //设置状态栏黑色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+            //恢复状态栏白色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+        }
     }
 
 }
