@@ -66,12 +66,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/col"
                     />
-            
+
             <ListView
                 android:id="@+id/gm_lv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 />
+                android:divider="@null"/>
 
         </LinearLayout>
         <ImageButton

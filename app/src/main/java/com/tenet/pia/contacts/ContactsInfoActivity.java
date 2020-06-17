@@ -2,6 +2,7 @@ package com.tenet.pia.contacts;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,7 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
     private TextView mName;
     private TextView mEmail;
     private TextView mPhone;
+    private Button callBtn;
 
     private Contact contact;
     private static long contactId;
@@ -38,6 +40,8 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
         contactId = intent.getLongExtra("contactId", 0);
         init();
         refreshData();
+
+
     }
 
     public void init() {
@@ -47,6 +51,7 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
         mName = (TextView) findViewById(R.id.XM);
         mPhone = (TextView) findViewById(R.id.DH);
         mEmail = (TextView) findViewById(R.id.YJ);
+        callBtn = (Button) findViewById(R.id.callBtn);
 
         editBtn.setOnClickListener(this);
         delButton.setOnClickListener(this);
@@ -60,12 +65,20 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
         String gender = contact.getGender();
 
         if (contact.getGender().equals("女")) {//if (contact.getGender()=="女") {//
-            mName.setText("Ms." + contact.getName() + " | " + contact.getGroupName() + "|" + contact.getGroupId());
+            mName.setText("Ms." + contact.getName() + " | " + contact.getGroupName() );
         } else {
-            mName.setText("Mr." + contact.getName() + " | " + contact.getGroupName() + "|" + contact.getGroupId());
+            mName.setText("Mr." + contact.getName() + " | " + contact.getGroupName() );
         }
         mPhone.setText(contact.getPhone());
         mEmail.setText(contact.getEmail());
+
+        callBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dialIntent =  new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + contact.getPhone()));//跳转到拨号界面，同时传递电话号码
+                startActivity(dialIntent);
+            }
+        });
     }
 
     @Override
