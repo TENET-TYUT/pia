@@ -19,23 +19,7 @@
             android:id="@+id/ec_Cancel"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:background="@drawable/cancel"
-            android:onClick="click"
-            tools:ignore="OnClick" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/ec_Confirm"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:onClick="click"
-            android:background="@drawable/confirm"
-            tools:ignore="OnClick" />
-
+            android:background="@drawable/cancel" />
     </LinearLayout>
 
 
@@ -158,15 +142,30 @@
                 android:layout_centerVertical="true"
                 android:text="  性别："
                 android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/ec_sex"
+            <RadioGroup
+                android:id="@+id/ec_gender_radio"
                 style="@style/listItemTextStyle"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
+                android:orientation="horizontal"
                 android:layout_toRightOf="@id/ec_txt_sex"
-                android:background="@null" />
+                android:layout_marginLeft="5dp">
+
+                <RadioButton
+                    android:id="@+id/ec_gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="男" />
+
+                <RadioButton
+                    android:id="@+id/ec_gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="女"/>
+
+            </RadioGroup>
         </RelativeLayout>
 
         <RelativeLayout
@@ -179,46 +178,32 @@
                 android:id="@+id/ec_btn_group"
                 style="@style/listItemTextStyle"
                 android:background="@null"
-                android:text="群组 >"
-                android:onClick="click"
-                tools:ignore="OnClick" />
+                android:text="群组 >" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ec_group"
                 style="@style/listItemTextStyle"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/ec_btn_group"
-                android:background="@null"
-                android:textSize="20dp" />
+                android:background="@null" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/ec_btn_determine"
                 style="@style/btnTextStyle"
+                android:layout_gravity="center_horizontal"
                 android:background="@null"
-                android:layout_marginLeft="50dp"
-                android:onClick="click"
-                android:text="确定"
-                tools:ignore="OnClick" />
-
-            <Button
-                android:id="@+id/ec_btn_delete"
-                style="@style/btnTextStyle"
-                android:layout_toRightOf="@id/ec_btn_determine"
-                android:layout_marginLeft="20dp"
-                android:background="@null"
-                android:onClick="click"
-                android:text="删除"
-                tools:ignore="OnClick" />
-        </RelativeLayout>
+                android:text="确定" />
+        </LinearLayout>
 
     </LinearLayout>
-
 </RelativeLayout>

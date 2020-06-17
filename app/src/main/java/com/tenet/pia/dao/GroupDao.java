@@ -29,6 +29,7 @@ public class GroupDao {
         values.put(GROUP_NAME, group.getGroupName());
         long id = db.insert(DateBaseHelper.GROUP_TABLE, null, values);
         db.close();
+
     }
 
     public List<Group> query() {
@@ -40,7 +41,7 @@ public class GroupDao {
         }
         while(cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex(GROUP_NAME));
-           long id = cursor.getLong(cursor.getColumnIndex(ID));
+            long id = cursor.getLong(cursor.getColumnIndex(ID));
             Group group = new Group(id,name);
             groupList.add(group);
         }

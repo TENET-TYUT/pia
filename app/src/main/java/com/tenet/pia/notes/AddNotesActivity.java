@@ -1,7 +1,5 @@
 package com.tenet.pia.notes;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +7,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.tenet.pia.R;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.tenet.pia.R;
 import com.tenet.pia.dao.NoteDao;
 import com.tenet.pia.entity.Note;
 
@@ -27,11 +26,12 @@ public class AddNotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_notes);
+        noteDao = new NoteDao(this);
 
         titleText = (EditText) findViewById(R.id.notes_title);
         contentText = (EditText) findViewById(R.id.notes_content);
         returnBtn = (ImageButton)findViewById(R.id.return_icon);
-        noteDao = new NoteDao(this);
+
 
         returnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
