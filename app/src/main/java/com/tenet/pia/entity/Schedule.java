@@ -38,23 +38,25 @@ public class Schedule implements Serializable {
      */
     private String scheduleLocation;
 
-    public Schedule(long id, long startTime, long endTime, String scheduleTitle, String scheduleDes, String scheduleLocation) {
+    /**
+     * 重复规则
+     */
+    private String rule;
+
+    /**
+     * 提醒时间
+     */
+    private int advance;
+
+    public Schedule(long id, long startTime, long endTime, String scheduleTitle, String scheduleDes, String scheduleLocation, String rule, int advance) {
         this.id = id;
         this.startTime = startTime;
         this.endTime = endTime;
         this.scheduleTitle = scheduleTitle;
         this.scheduleDes = scheduleDes;
         this.scheduleLocation = scheduleLocation;
-    }
-
-
-
-    public Schedule(long startTime, long endTime, String scheduleTitle, String scheduleDes, String scheduleLocation) {
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.scheduleTitle = scheduleTitle;
-        this.scheduleDes = scheduleDes;
-        this.scheduleLocation = scheduleLocation;
+        this.rule = rule;
+        this.advance = advance;
     }
 
     public long getId() {
@@ -83,6 +85,23 @@ public class Schedule implements Serializable {
 
     public String getScheduleTitle() {
         return scheduleTitle;
+    }
+
+
+    public String getRule() {
+        return rule;
+    }
+
+    public void setRule(String rule) {
+        this.rule = rule;
+    }
+
+    public int getAdvance() {
+        return advance;
+    }
+
+    public void setAdvance(int advance) {
+        this.advance = advance;
     }
 
     public void setScheduleTitle(String scheduleTitle) {

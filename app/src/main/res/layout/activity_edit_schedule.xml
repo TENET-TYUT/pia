@@ -1,225 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@drawable/bkg"
-tools:context="com.tenet.pia.schedule.EditScheduleActivity">
-
-<LinearLayout
-    android:layout_width="331dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="28dp"
-    android:layout_centerHorizontal="true"
-    android:orientation="horizontal">
-
-
-    <ImageButton
-        android:id="@+id/es_Cancel"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:background="@drawable/cancel"
-        android:onClick="click"
-        tools:ignore="OnClick" />
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <ImageButton
-        android:id="@+id/es_Confirm"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:onClick="click"
-        android:background="@drawable/confirm"
-        tools:ignore="OnClick" />
-
-</LinearLayout>
-
-
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkg"
     android:orientation="vertical"
-    android:layout_marginTop="85dp">
+    tools:context=".schedule.AddScheduleActivity">
 
-    <TextView
-        style="@style/headerTextStyle_CN"
+    <ImageButton
+        android:id="@+id/return_icon"
+        android:layout_width="25.5dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="36.75dp"
+        android:layout_marginTop="32.75dp"
+        android:background="@drawable/return_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="编辑日程"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        style="@style/headerTextStyle_EN"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:text="EDITDATE"
-        tools:ignore="MissingConstraints" />
-
-</LinearLayout>
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="214dp"
-    android:orientation="vertical"
-    android:layout_centerHorizontal="true">
-
-    <RelativeLayout
-        android:layout_width="295dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/shade">
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/es_txt_business"
-            style="@style/listItemTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="  事务："
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/es_business"
-            style="@style/listItemTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/es_txt_business"
-            android:background="@null" />
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="295dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/shade">
+            style="@style/headerTextStyle_CN"
+            android:layout_gravity="center_horizontal"
+            android:text="编辑日程"
+            tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/es_txt_date"
-            style="@style/listItemTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="  日期："
-            android:textSize="20sp" />
+            style="@style/headerTextStyle_EN"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="EDIT DATE" />
 
-        <EditText
-            android:id="@+id/es_date"
-            style="@style/listItemTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/es_txt_date"
-            android:background="@null" />
-    </RelativeLayout>
+    </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="295dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/shade"
-        style="@style/listItemTextStyle">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/es_txt_site"
-            style="@style/listItemTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="  地点：" />
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/es_site"
-            style="@style/listItemTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/es_txt_site"
-            android:background="@null" />
-    </RelativeLayout>
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="标题:" />
 
-    <RelativeLayout
-        android:layout_width="295dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/shade">
+            <EditText
+                android:id="@+id/title"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/es_txt_Btime"
-            style="@style/listItemTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="  开始时间："
-            android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/es_Btime"
-            style="@style/listItemTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/es_txt_Btime"
-            android:background="@null" />
-    </RelativeLayout>
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="描述:" />
 
-    <RelativeLayout
-        android:layout_width="295dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/shade">
+            <EditText
+                android:id="@+id/des"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/es_txt_Etime"
-            style="@style/listItemTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="  结束时间："
-            android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/es_Etime"
-            style="@style/listItemTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/es_txt_Etime"
-            android:background="@null"
-            android:textSize="20dp" />
-    </RelativeLayout>
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="地点:" />
 
-    <RelativeLayout
+            <EditText
+                android:id="@+id/location"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="选择日期:" />
+
+            <TextView
+                android:id="@+id/choose_date"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="开始时间:" />
+
+            <TextView
+                android:id="@+id/start_time"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="结束时间:" />
+
+            <TextView
+                android:id="@+id/end_time"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="提醒时间:" />
+
+            <TextView
+                android:hint="5分钟前"
+                android:id="@+id/advance_time"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="重复规则:" />
+
+            <TextView
+                android:hint="不重复"
+                android:id="@+id/rule"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp">
-
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp">
         <Button
-            android:id="@+id/es_btn_determine"
+            android:id="@+id/confirm_btn"
             style="@style/btnTextStyle"
             android:background="@null"
-            android:layout_marginLeft="50dp"
-            android:onClick="click"
-            android:text="确定"
-            tools:ignore="OnClick" />
-
+            android:layout_marginRight="40dp"
+            android:text="确 定" />
         <Button
-            android:id="@+id/es_btn_delete"
+            android:id="@+id/delete_btn"
             style="@style/btnTextStyle"
-            android:layout_toRightOf="@id/es_btn_determine"
-            android:layout_marginLeft="20dp"
             android:background="@null"
-            android:onClick="click"
-            android:text="删除"
-            tools:ignore="OnClick" />
-    </RelativeLayout>
+            android:text="删 除" />
+    </LinearLayout>
 
 </LinearLayout>
-
-</RelativeLayout>
