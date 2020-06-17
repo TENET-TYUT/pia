@@ -26,11 +26,12 @@ public class AddNotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_notes);
+        noteDao = new NoteDao(this);
 
         titleText = (EditText) findViewById(R.id.notes_title);
         contentText = (EditText) findViewById(R.id.notes_content);
         returnBtn = (ImageButton)findViewById(R.id.return_icon);
-        noteDao = new NoteDao(this);
+
 
         returnBtn.setOnClickListener(new View.OnClickListener() {
             @Override

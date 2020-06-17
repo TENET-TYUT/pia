@@ -65,10 +65,7 @@ public class NoteDao {
         List<Note> noteList = new ArrayList<>();
         SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
         Cursor cursor = db.query(DateBaseHelper.NOTE_TABLE, null, null, null, null, null, null);
-        if (cursor.getCount() != 0) {
-            cursor.moveToFirst();
-        }
-        while (cursor.moveToNext()) {
+        while (cursor.moveToNext()){
             long id = cursor.getLong(cursor.getColumnIndex(ID));
             String noteTitle = cursor.getString(cursor.getColumnIndex(NOTE_TITLE));
             String noteContent = cursor.getString(cursor.getColumnIndex(NOTE_CONTENT));

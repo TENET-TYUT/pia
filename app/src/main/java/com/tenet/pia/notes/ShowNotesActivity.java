@@ -1,8 +1,5 @@
 package com.tenet.pia.notes;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.tenet.pia.R;
 import com.tenet.pia.dao.NoteDao;
@@ -32,6 +32,7 @@ public class ShowNotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_notes);
+        noteDao = new NoteDao(this);
 
         buttonAdd = (ImageButton) findViewById(R.id.add_nt);
 
@@ -56,7 +57,7 @@ public class ShowNotesActivity extends AppCompatActivity {
     }
 
     public void refreshData() {
-        noteDao = new NoteDao(this);
+
         noteList = (ArrayList<Note>) noteDao.query();
 
         lv = (ListView) findViewById(R.id.Lv_sn);
