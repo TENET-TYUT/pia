@@ -32,6 +32,10 @@ public class ShowNotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_notes);
+
+        //设置手机应用内部状态栏字体图标为黑色
+        changeStatusBarTextImgColor(true);
+
         noteDao = new NoteDao(this);
 
         buttonAdd = (ImageButton) findViewById(R.id.add_nt);
@@ -126,6 +130,19 @@ public class ShowNotesActivity extends AppCompatActivity {
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * 界面设置状态栏字体颜色
+     */
+    public void changeStatusBarTextImgColor(boolean isBlack) {
+        if (isBlack) {
+            //设置状态栏黑色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+            //恢复状态栏白色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
         }
     }
 }

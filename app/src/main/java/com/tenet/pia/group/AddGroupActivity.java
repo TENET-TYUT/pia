@@ -29,6 +29,9 @@ public class AddGroupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_group);
 
+        //设置手机应用内部状态栏字体图标为黑色
+        changeStatusBarTextImgColor(true);
+
         et_ag = (EditText) findViewById(R.id.new_group);
         btn_ag = (Button) findViewById(R.id.btn);
         returnBtn = (ImageButton)findViewById(R.id.ag_return);
@@ -87,5 +90,18 @@ public class AddGroupActivity extends AppCompatActivity {
         final Intent intent = new Intent();
         intent.putExtra("groupName", groupName);
         setResult(1, intent);
+    }
+
+    /**
+     * 界面设置状态栏字体颜色
+     */
+    public void changeStatusBarTextImgColor(boolean isBlack) {
+        if (isBlack) {
+            //设置状态栏黑色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+            //恢复状态栏白色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+        }
     }
 }

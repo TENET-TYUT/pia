@@ -43,6 +43,9 @@ public class EditContactsActivity extends Activity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_contacts);
 
+        //设置手机应用内部状态栏字体图标为黑色
+        changeStatusBarTextImgColor(true);
+
         //接受ContactsInfoActivity传来的contact对象
         contact = (Contact) getIntent().getSerializableExtra("contact");
         gender = contact.getGender();
@@ -171,6 +174,19 @@ public class EditContactsActivity extends Activity implements View.OnClickListen
                 contact.setGroupId(group.getId());
                 contact.setGroupName(group.getGroupName());
             }
+        }
+    }
+
+    /**
+     * 界面设置状态栏字体颜色
+     */
+    public void changeStatusBarTextImgColor(boolean isBlack) {
+        if (isBlack) {
+            //设置状态栏黑色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+            //恢复状态栏白色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
         }
     }
 

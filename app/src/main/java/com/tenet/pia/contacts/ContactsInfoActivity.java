@@ -26,7 +26,7 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
     private TextView mName;
     private TextView mEmail;
     private TextView mPhone;
-    private Button callBtn;
+    private ImageButton callBtn;
 
     private Contact contact;
     private static long contactId;
@@ -35,6 +35,10 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts_info);
+
+        //设置手机应用内部状态栏字体图标为黑色
+        changeStatusBarTextImgColor(true);
+
         contactDao = new ContactDao(this);
         Intent intent = getIntent();
         contactId = intent.getLongExtra("contactId", 0);
@@ -51,11 +55,12 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
         mName = (TextView) findViewById(R.id.XM);
         mPhone = (TextView) findViewById(R.id.DH);
         mEmail = (TextView) findViewById(R.id.YJ);
-        callBtn = (Button) findViewById(R.id.callBtn);
+        callBtn = (ImageButton) findViewById(R.id.callBtn);
 
         editBtn.setOnClickListener(this);
         delButton.setOnClickListener(this);
         returnButton.setOnClickListener(this);
+        callBtn.setOnClickListener(this);
     }
 
     public void refreshData() {
@@ -72,13 +77,6 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
         mPhone.setText(contact.getPhone());
         mEmail.setText(contact.getEmail());
 
-        callBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialIntent =  new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + contact.getPhone()));//跳转到拨号界面，同时传递电话号码
-                startActivity(dialIntent);
-            }
-        });
     }
 
     @Override
@@ -110,6 +108,12 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
                         .setNegativeButton("取消", null)
                         .show();
                 break;
+
+            case R.id.callBtn:
+                Intent dialIntent =  new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + contact.getPhone()));//跳转到拨号界面，同时传递电话号码
+                startActivity(dialIntent);
+                break;
+
         }
     }
 
@@ -123,6 +127,19 @@ public class ContactsInfoActivity extends AppCompatActivity implements View.OnCl
     protected void onRestart() {
         super.onRestart();
         refreshData();
+    }
+
+    /**
+     * 界面设置状态栏字体颜色
+     */
+    public void changeStatusBarTextImgColor(boolean isBlack) {
+        if (isBlack) {
+            //设置状态栏黑色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+            //恢复状态栏白色字体
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+        }
     }
 
 }
