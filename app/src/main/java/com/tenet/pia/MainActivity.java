@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton mbtn_contacts;
     private ImageButton mbtn_schedule;
     private ImageButton mbtn_notes;
+    private TextView aboutText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +32,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mbtn_contacts=(ImageButton) findViewById(R.id.btn_contacts);
         mbtn_notes=(ImageButton) findViewById(R.id.btn_notes);
         mbtn_schedule =(ImageButton)findViewById(R.id.btn_schedule);
+        aboutText = (TextView) findViewById(R.id.about_btn);
 
 
         mbtn_contacts.setOnClickListener(this);
         mbtn_notes.setOnClickListener(this);
         mbtn_schedule.setOnClickListener(this);
+        aboutText.setOnClickListener(this);
+
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR}, 1);
 
@@ -55,6 +60,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_notes:
                 Intent intent3 = new Intent(this, ShowNotesActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.about_btn:
+                Intent intent = new Intent(this, AboutActivity.class);
+                startActivity(intent);
                 break;
         }
 
