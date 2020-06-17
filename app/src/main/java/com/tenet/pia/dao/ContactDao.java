@@ -72,9 +72,7 @@ public class ContactDao {
         contactList = new ArrayList<>();
         SQLiteDatabase db = dateBaseHelper.getReadableDatabase();
         Cursor cursor = db.query(DateBaseHelper.CONTACT_TABLE, null, null, null, null, null, null);
-        if (cursor.getCount() != 0) {
-            cursor.moveToFirst();
-        }
+        
         while (cursor.moveToNext()) {
             Long id = cursor.getLong(cursor.getColumnIndex(CONTACT_ID));
             String name = cursor.getString(cursor.getColumnIndex(CONTACT_NAME));
