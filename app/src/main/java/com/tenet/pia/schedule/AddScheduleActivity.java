@@ -20,7 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.tenet.pia.R;
 import com.tenet.pia.calendarProvider.CalendarEvent;
 import com.tenet.pia.calendarProvider.CalendarProviderManager;
-import com.tenet.pia.calendarProvider.RRuleConstant;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -59,15 +58,6 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
      */
     private TextView endTime;
 
-    /**
-     * 日程提醒时间
-     */
-    private TextView advanceTime;
-
-    /**
-     * 日程重复规则
-     */
-    private TextView rule;
 
     /**
      * 返回按钮
@@ -84,7 +74,7 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
     private Date startDate;
     private Date endDate;
 
-    private int advanceInt = 5;
+    private int advanceInt = 0;
     private String ruleStr = null;
 
     @Override
@@ -101,15 +91,11 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
         date = (TextView) findViewById(R.id.choose_date);
         startTime = (TextView) findViewById(R.id.start_time);
         endTime = (TextView) findViewById(R.id.end_time);
-        advanceTime = (TextView) findViewById(R.id.advance_time);
-        rule = (TextView) findViewById(R.id.rule);
         returnBtn = (ImageButton) findViewById(R.id.return_icon);
         confirmBtn = (Button) findViewById(R.id.confirm_btn);
         date.setOnClickListener(this);
         startTime.setOnClickListener(this);
         endTime.setOnClickListener(this);
-        advanceTime.setOnClickListener(this);
-        rule.setOnClickListener(this);
         returnBtn.setOnClickListener(this);
         confirmBtn.setOnClickListener(this);
     }
@@ -131,12 +117,6 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.end_time:
                 onClickEndTime();
-                break;
-            case R.id.advance_time:
-                onClickAdvanceTime();
-                break;
-            case R.id.rule:
-                onClickRule();
                 break;
         }
     }
@@ -213,6 +193,7 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
             intent.putExtra("success", "false");
             setResult(1, intent);
         }
+        finish();
     }
 
     /**
@@ -282,69 +263,6 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-    /**
-     * 点击提醒时间
-     */
-    public void onClickAdvanceTime() {
-        final int[] whichID = {0};
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("选择提醒时间");
-        final String items[] = {"5分钟前", "15分钟前", "30分钟前", "1小时前", "2小时前", "一天前", "两天前", "一周前"};
-        dialog.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                whichID[0] = which;
-            }
-        });
-        dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                advanceTime.setText(items[whichID[0]]);
-                int[] arr = {5, 15, 30, 60, 2 * 60, 24 * 60, 2 * 24 * 60, 7 * 24 * 60};
-                advanceInt = arr[whichID[0]];
-            }
-        });
-        dialog.setNegativeButton("取消", null);
-        dialog.show();
-
-    }
-
-    /**
-     * 点击规则
-     */
-    public void onClickRule() {
-        final int[] whichID = {3};
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("选择选择重复规则");
-        final String items[] = {"每天重复", "每周重复", "每月重复", "不重复"};
-        dialog.setSingleChoiceItems(items, 3, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                whichID[0] = which;
-            }
-        });
-        dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                rule.setText(items[whichID[0]]);
-            }
-        });
-        switch (whichID[0]) {
-            case 0:
-                ruleStr = RRuleConstant.REPEAT_CYCLE_DAILY_FOREVER;
-                break;
-            case 1:
-                ruleStr = RRuleConstant.REPEAT_CYCLE_WEEKLY;
-                break;
-            case 2:
-                ruleStr = RRuleConstant.REPEAT_CYCLE_MONTHLY;
-                break;
-            default:
-                ruleStr = null;
-        }
-        dialog.setNegativeButton("取消", null);
-        dialog.show();
-    }
 
     @Override
     public void onBackPressed() {
@@ -354,7 +272,7 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
         String eventDate = (String) date.getText();
         String start = (String) startTime.getText();
         String end = (String) endTime.getText();
-        if(eventTitle.length() == 0 && eventDes.length() == 0 && eventLocation.length() == 0 && eventDate.length() == 0 && start.length() == 0 && end.length() == 0) {
+        if(eventTitle.length() != 0 && eventDes.length() != 0 && eventLocation.length() != 0 && eventDate.length() != 0 && start.length() != 0 && end.length() != 0) {
             new AlertDialog.Builder(this)
                     .setTitle("是否保存事件")
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
