@@ -1,9 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkg"
+    android:orientation="vertical"
     tools:context=".schedule.AddScheduleActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/return_icon"
+        android:layout_width="25.5dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="36.75dp"
+        android:layout_marginTop="32.75dp"
+        android:background="@drawable/return_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/headerTextStyle_CN"
+            android:layout_gravity="center_horizontal"
+            android:text="新建日程"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            style="@style/headerTextStyle_EN"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="NEW DATE" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="标题:" />
+
+            <EditText
+                android:id="@+id/title"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="描述:" />
+
+            <EditText
+                android:id="@+id/des"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="地点:" />
+
+            <EditText
+                android:id="@+id/location"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="选择日期:" />
+
+            <TextView
+                android:id="@+id/choose_date"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="开始时间:" />
+
+            <TextView
+                android:id="@+id/start_time"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="结束时间:" />
+
+            <TextView
+                android:id="@+id/end_time"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="提醒时间:" />
+
+            <TextView
+                android:hint="5分钟前"
+                android:id="@+id/advance_time"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shade"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/listItemTextStyle"
+                android:layout_marginLeft="13dp"
+                android:text="重复规则:" />
+
+            <TextView
+                android:hint="不重复"
+                android:id="@+id/rule"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:background="@null" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirm_btn"
+        style="@style/btnTextStyle"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:text="确 定" />
+</LinearLayout>

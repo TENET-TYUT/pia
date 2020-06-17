@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -25,5 +25,8 @@
     </style>
     <style name="homeIndexTextStyle" parent="headerTextStyle_CN">
         <item name="android:textSize">15dp</item>
+    </style>
+    <style name="aboutTextStyle" parent="headerTextStyle_CN">
+        <item name="android:textSize">17dp</item>
     </style>
 </resources>

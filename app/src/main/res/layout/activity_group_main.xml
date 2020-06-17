@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tenet.pia.group.GroupMainActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bkg"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/return_icon"
+                android:layout_width="25dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/return_icon" />
+
+            <TextView
+                style="@style/headerTextStyle_CN"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="20dp"
+                android:text="联系人" />
+
+            <TextView
+                android:id="@+id/contact"
+                style="@style/headerTextStyle_EN"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="10dp"
+                android:text="C O N T A C T" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/col"
+                    android:layout_marginTop="15dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        style="@style/myGroupTextStyle"
+                        android:id="@+id/gm_group"
+                        android:text="我的群组"
+                        android:background="@null"
+                        android:layout_marginLeft="25dp"
+                        />
+                    <TextView
+                        style="@style/myGroupTextStyle"
+                        android:text=">"
+                        android:layout_width="80dp"
+                        android:gravity="center"
+                        android:background="@null"
+                        android:textColor="#938f8f"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/col"
+                    />
+
+            <ListView
+                android:id="@+id/gm_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"/>
+
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/gm_add_btn"
+            android:layout_width="86dp"
+            android:layout_height="82dp"
+            android:background="@drawable/add_btn_bkg"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="18dp"
+            />
+    </FrameLayout>
+
+</LinearLayout>

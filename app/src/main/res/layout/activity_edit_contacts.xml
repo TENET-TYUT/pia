@@ -1,9 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkg"
     tools:context=".contacts.EditContactsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ec_Cancel"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/cancel" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="85dp">
+
+        <TextView
+            style="@style/headerTextStyle_CN"
+            android:layout_gravity="center_horizontal"
+            android:text="编辑联系人"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            style="@style/headerTextStyle_EN"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="EDITCONTACT"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="214dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/ec_txt_name"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  姓名："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ec_name"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/ec_txt_name"
+                android:background="@null" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/ec_txt_phone"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  电话："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ec_phone"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/ec_txt_phone"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade"
+            style="@style/listItemTextStyle">
+
+            <TextView
+                android:id="@+id/ec_txt_email"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  邮箱：" />
+
+            <EditText
+                android:id="@+id/ec_email"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/ec_txt_email"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/ec_txt_sex"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  性别："
+                android:textSize="20sp" />
+            <RadioGroup
+                android:id="@+id/ec_gender_radio"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@id/ec_txt_sex"
+                android:layout_marginLeft="5dp">
+
+                <RadioButton
+                    android:id="@+id/ec_gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="男" />
+
+                <RadioButton
+                    android:id="@+id/ec_gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="女"/>
+
+            </RadioGroup>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <Button
+                android:id="@+id/ec_btn_group"
+                style="@style/listItemTextStyle"
+                android:background="@null"
+                android:text="群组 >" />
+
+            <TextView
+                android:id="@+id/ec_group"
+                style="@style/listItemTextStyle"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/ec_btn_group"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/ec_btn_determine"
+                style="@style/btnTextStyle"
+                android:layout_gravity="center_horizontal"
+                android:background="@null"
+                android:text="确定" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkg"
+    tools:context="com.tenet.pia.contacts.AddContactsActivity">
+
+
+
+    <ImageButton
+        android:id="@+id/ac_return"
+        android:layout_width="33dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/return_icon"
+        android:onClick="click"
+        tools:ignore="OnClick" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="85dp">
+
+        <TextView
+            style="@style/headerTextStyle_CN"
+            android:layout_gravity="center_horizontal"
+            android:text="新建联系人"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            style="@style/headerTextStyle_EN"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="NEWCONTACT"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="214dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/ac_txt_name"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  姓名："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ac_name"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/ac_txt_name"
+                android:background="@null" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/ac_txt_phone"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  电话："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ac_phone"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/ac_txt_phone"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade"
+            style="@style/listItemTextStyle">
+
+            <TextView
+                android:id="@+id/ac_txt_email"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  邮箱：" />
+
+            <EditText
+                android:id="@+id/ac_email"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/ac_txt_email"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <TextView
+                android:id="@+id/ac_txt_sex"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="  性别："
+                android:textSize="20sp" />
+            <RadioGroup
+                android:id="@+id/ac_gender_radio"
+                style="@style/listItemTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@id/ac_txt_sex"
+                android:layout_marginLeft="5dp">
+
+                <RadioButton
+                    android:id="@+id/ac_gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="男" />
+
+                <RadioButton
+                    android:id="@+id/ac_gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="女"/>
+
+            </RadioGroup>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="295dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shade">
+
+            <Button
+                android:id="@+id/ac_btn_group"
+                style="@style/listItemTextStyle"
+                android:background="@null"
+                android:text="群组 >"
+                android:onClick="click"
+                tools:ignore="OnClick" />
+
+            <EditText
+                android:id="@+id/ac_group"
+                style="@style/listItemTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/ac_btn_group"
+                android:background="@null"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/ac_btn_determine"
+            style="@style/btnTextStyle"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:gravity="center"
+            android:onClick="click"
+            android:text="确定"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+</RelativeLayout>
