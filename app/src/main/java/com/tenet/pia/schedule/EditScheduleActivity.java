@@ -127,12 +127,13 @@ public class EditScheduleActivity extends AppCompatActivity implements View.OnCl
         endDate = Calendar.getInstance();
         endDate.setTimeInMillis(schedule.getEndTime());
         int year = startDate.get(Calendar.YEAR);
+        Date _startDate = new Date(schedule.getStartTime());
         int month = startDate.get(Calendar.MONTH);
         int day = startDate.get(Calendar.DAY_OF_MONTH);
         times.add(0, startDate.get(Calendar.YEAR));
         times.add(1, startDate.get(Calendar.MONTH));
         times.add(2, startDate.get(Calendar.DAY_OF_MONTH));
-        date.setText((year - 1900) + "年" + (month  + 1) + "月" + day + "日");
+        date.setText(_startDate.getYear() + "年" + (month  + 1) + "月" + day + "日");
         startTime.setText(startDate.get(Calendar.HOUR_OF_DAY) + "时" + startDate.get(Calendar.MINUTE) + "分");
         endTime.setText(endDate.get(Calendar.HOUR_OF_DAY) + "时" + endDate.get(Calendar.MINUTE) + "分");
     }
@@ -211,14 +212,6 @@ public class EditScheduleActivity extends AppCompatActivity implements View.OnCl
         String end = (String) endTime.getText();
         if (eventTitle.length() == 0) {
             Toast.makeText(this, "标题不能为空", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (eventDes.length() == 0) {
-            Toast.makeText(this, "描述不能为空", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (eventLocation.length() == 0) {
-            Toast.makeText(this, "地点不能为空", Toast.LENGTH_SHORT).show();
             return false;
         }
         if (eventDate.length() == 0) {
@@ -336,6 +329,8 @@ public class EditScheduleActivity extends AppCompatActivity implements View.OnCl
         String start = (String) startTime.getText();
         String end = (String) endTime.getText();
         if(eventTitle.equals(schedule.getScheduleTitle()) && eventDes.equals(schedule.getScheduleDes()) && eventLocation.equals(schedule.getScheduleLocation()) && startDate.getTime().getTime() == schedule.getStartTime() && endDate.getTime().getTime() == schedule.getEndTime()) {
+            super.onBackPressed();
+        } else if(eventDes.length() == 0 && eventLocation.length() == 0){
             super.onBackPressed();
         } else {
             new AlertDialog.Builder(this)
