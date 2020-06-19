@@ -32,7 +32,7 @@ public class EditNotesActivity extends AppCompatActivity {
         returnBtn = (ImageButton)findViewById(R.id.return_icon);
         deleteButton=(Button)findViewById(R.id.delete_btn);
         noteDao = new NoteDao(this);
-        note = (Note) getIntent().getSerializableExtra("note");
+        note = (Note) getIntent().getSerializableExtra("note");//获得改变了的数据
 
         titleText.setText(note.getNoteTitle());
         contentText.setText(note.getNoteContent());
@@ -57,7 +57,7 @@ public class EditNotesActivity extends AppCompatActivity {
                                     Toast.makeText(EditNotesActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent();
                                     intent.putExtra("change", true);
-                                    setResult(1, intent);
+                                    setResult(1, intent);//改变数据之后会进行数据回传
                                 } else {
                                     Toast.makeText(EditNotesActivity.this, "删除失败", Toast.LENGTH_SHORT).show();
                                 }
